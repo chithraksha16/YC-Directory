@@ -107,7 +107,8 @@
   }
 
   .pink_container {
-    @apply w-full bg-primary min-h-[530px] flex justify-center items-center flex-col py-10 px-6;
+    @apply w-full  min-h-132.5 flex justify-center items-center flex-col py-10 px-6 ;
+    background-color: rgb(var(--primary));
   }
 
   .tag {
@@ -115,13 +116,16 @@
   }
 
   .heading {
-    @apply uppercase  px-6 py-3 font-work-sans font-extrabold  sm:text-[54px] sm:leading-16 text-[36px] leading-11.5 max-w-5xl sm:w-full text-center my-5;
+    @apply uppercase px-6 py-3 font-work-sans font-extrabold  sm:text-[54px] sm:leading-16 text-[36px] leading-11.5 max-w-5xl sm:w-full text-center my-5;
     background-color: rgb(var(--black)); /* use your CSS variable */
     color: rgb(var(--white));
   }
 
   .sub-heading {
-    @apply font-medium text-[20px] text-white max-w-2xl text-center break-words;
+    @apply font-medium text-[20px]  max-w-2xl text-center wrap-break-word;
+    color: rgb(var(--white));
+   
+
   }
 
   .section_container {
@@ -157,6 +161,23 @@
     @apply rounded-full object-cover border-[3px] border-black;
   }
 
+   /* searchform */
+  .search-form {
+    @apply max-w-3xl w-full min-h-20 bg-white border-[5px] border-black rounded-[80px] text-[24px] mt-8 px-5 flex flex-row items-center gap-5;
+    background-color: rgb(var(--white));
+  }
+
+  .search-input {
+    @apply flex-1 font-bold placeholder:font-semibold placeholder:text-black-100 w-full h-auto outline-none;
+  }
+
+  .search-btn {
+    @apply size-12.5 rounded-full bg-black flex justify-center items-center;
+    background-color: rgb(var(--black));
+    color: rgb(var(--white-100));
+    
+  }
+
   /* startup card */
   .startup-card {
     @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-200 hover:border-primary transition-all duration-500 hover:shadow-300 hover:bg-primary-100;
@@ -172,6 +193,19 @@
 
   .startup-card_btn {
     @apply rounded-full bg-black-200 font-medium text-[16px] text-white px-5 py-3;
+  }
+
+  .pattern {
+    background-image: linear-gradient(
+            to right,
+            transparent 43.5%,
+            rgba(251, 232, 67, 0.2) 49.5%,
+            rgba(251, 232, 67, 0.6) 50.5%,
+            transparent 50.5%
+    );
+    background-size: 32px 100%;
+    background-position: center;
+    background-repeat: repeat-x;
   }
 
   .category-tag {
