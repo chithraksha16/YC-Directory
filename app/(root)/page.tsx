@@ -1,7 +1,21 @@
-import SearchForm from "../components/SearchForm";
 
+import SearchForm from "../../components/SearchForm";
+import StartupCard from "@/components/StartupCard";
 
-export default function Home() {
+export default async function Home({searchParams}:{searchParams:Promise<{query?:string}>}) {
+  const query=  (await searchParams).query
+  const posts=[{
+    _createdAt:new Date,
+    views:55,
+    _id:1,
+    author:{_id:1},
+    description:"This is description",
+    image:"",
+    category:"Robots",
+    tittle:"We robots"
+
+  }]
+  
   return (
     <>
     <section className="pink_container pattern">
@@ -16,6 +30,21 @@ export default function Home() {
           Competitions.
         </p>
         <SearchForm/>
+    </section>
+    <section className="section_container">
+      <p className="text-30-semibold">
+        {query ?`Search results for "${query}"` : "All Startup"}
+      </p>
+
+      <ul className="mt-7 card_grid">
+          {posts?.length > 0 ? (
+            posts.map((post: StartupTypeCard) => (
+              <StartupCard key={post?._id} post={post} />
+            ))
+          ) : (
+            <p className="no-results">No startups found</p>
+          )}
+        </ul>
     </section>
     
     </>

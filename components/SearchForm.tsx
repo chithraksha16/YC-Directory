@@ -1,9 +1,13 @@
 "use client";
 import Form from "next/form";
 import SearchFormReset from "./SearchFormReset";
+import { useSearchParams } from "next/navigation";
+import { Search } from "lucide-react";
 
-const SearchForm = ({query}:{query?:string}) => {
-    console.log(query)
+const SearchForm = () => {
+  const searchParams = useSearchParams();
+  const query = searchParams.get("query") || "";
+   
    
   return (
    <Form action='/'  className="search-form">
@@ -18,7 +22,7 @@ const SearchForm = ({query}:{query?:string}) => {
    <div className="flex gap-2">
     {query && <SearchFormReset />}
     <button type="submit" className="search-btn text-white">
-        S
+        <Search className="size-5"/>
     </button>
    </div>
    </Form>
