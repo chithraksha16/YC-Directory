@@ -8,7 +8,7 @@ export default async function Home({searchParams}:{searchParams:Promise<{query?:
     _createdAt:new Date,
     views:55,
     _id:1,
-    author:{_id:1},
+    author:{_id:1,name:"Adrian"},
     description:"This is description",
     image:"",
     category:"Robots",
